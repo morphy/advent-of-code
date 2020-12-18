@@ -1,7 +1,6 @@
 const fs = require('fs');
 
 let expenses = fs.readFileSync('input.txt').toString().split("\n");
-expenses.pop();
 
 function find_and_multiply(sum, data) {
   let l, m, r, mysum, direction;
@@ -17,10 +16,15 @@ function find_and_multiply(sum, data) {
 
   data.sort((a, b) => a - b);
 
+  let licznik=0;
+
   while((l < m) && (m < r)) {
+    licznik++;
+    console.log('licznik:', licznik);
     mysum = +data[l] + +data[m] + +data[r];
 
     if(mysum === sum) {
+      console.log(data[l], data[m], data[r]);
       return data[l] * data[m] * data[r];
     }
     else {

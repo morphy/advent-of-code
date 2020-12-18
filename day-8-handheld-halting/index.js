@@ -38,7 +38,7 @@
   function zero(input) {
     input.forEach((value, index) => {
       input[index].executed = 0;
-    })
+    });
   }
 
   const fs = require('fs');
